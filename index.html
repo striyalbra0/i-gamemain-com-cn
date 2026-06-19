@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 · 简明指南与访问提醒</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: linear-gradient(145deg, #fde9d2 0%, #f7d4b5 45%, #f2c3a0 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.2rem;
+    }
+
+    .card {
+      max-width: 860px;
+      width: 100%;
+      background: #fffffffa;
+      backdrop-filter: blur(2px);
+      border-radius: 36px;
+      padding: 3rem 2.8rem 3.2rem;
+      box-shadow: 0 24px 48px -12px rgba(148, 87, 35, 0.28),
+                  0 8px 16px -6px rgba(120, 70, 30, 0.12);
+      transition: box-shadow 0.25s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 28px 56px -14px rgba(138, 78, 28, 0.32);
+    }
+
+    .hero-short {
+      font-size: 0.9rem;
+      letter-spacing: 0.02em;
+      color: #b27a52;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 0.6rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      line-height: 1.2;
+      color: #3e2b1b;
+      margin-bottom: 0.3rem;
+      letter-spacing: -0.01em;
+    }
+
+    .subhead {
+      font-size: 1.1rem;
+      color: #6b4f35;
+      margin-bottom: 2.2rem;
+      border-left: 3px solid #d99e6f;
+      padding-left: 1rem;
+      line-height: 1.5;
+    }
+
+    .intro-text p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #3d3025;
+      margin-bottom: 1.4rem;
+    }
+
+    .intro-text a {
+      color: #b46d38;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1.5px solid #e6b68b;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .intro-text a:hover {
+      color: #8a562a;
+      border-bottom-color: #b46d38;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 1.5rem;
+      margin: 2.2rem 0 2rem;
+    }
+
+    .feature-item {
+      background: #faf1e9;
+      border-radius: 24px;
+      padding: 1.2rem 1.4rem 1.4rem;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .feature-item:hover {
+      background: #f3e3d4;
+      transform: translateY(-3px);
+    }
+
+    .feature-item .num {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      background: #d99e6f;
+      color: #2f2218;
+      padding: 0.2rem 0.6rem;
+      border-radius: 30px;
+      margin-bottom: 0.6rem;
+      letter-spacing: 0.04em;
+    }
+
+    .feature-item h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #3a2a1b;
+      margin-bottom: 0.35rem;
+    }
+
+    .feature-item p {
+      font-size: 0.92rem;
+      line-height: 1.5;
+      color: #5c4736;
+    }
+
+    .reminder-block {
+      background: #f9efe5;
+      border-radius: 28px;
+      padding: 1.6rem 1.8rem;
+      margin: 1.8rem 0 2.4rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.6rem 1rem;
+    }
+
+    .reminder-block .label {
+      font-weight: 600;
+      color: #62462b;
+      background: #dfb48f;
+      padding: 0.15rem 1rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      letter-spacing: 0.03em;
+    }
+
+    .reminder-block p {
+      flex: 1;
+      min-width: 200px;
+      font-size: 0.98rem;
+      color: #4c3826;
+      line-height: 1.6;
+    }
+
+    .reminder-block a {
+      color: #b46d38;
+      font-weight: 500;
+      text-decoration: none;
+      border-bottom: 1.5px solid #dbaa7e;
+    }
+
+    .reminder-block a:hover {
+      color: #7b4f2a;
+      border-bottom-color: #b46d38;
+    }
+
+    .faq-note {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin: 2rem 0 1.6rem;
+    }
+
+    .faq-note summary {
+      font-weight: 600;
+      color: #4b3826;
+      font-size: 1rem;
+      cursor: default;
+      padding: 0.2rem 0;
+    }
+
+    .faq-note details {
+      flex: 1;
+      min-width: 180px;
+      background: #fcf6f0;
+      padding: 0.8rem 1.2rem;
+      border-radius: 30px;
+      border: 1px solid #eedbcb;
+    }
+
+    .faq-note details p {
+      margin-top: 0.4rem;
+      font-size: 0.92rem;
+      color: #5a4532;
+      line-height: 1.5;
+    }
+
+    .closing {
+      border-top: 1px solid #e7d1be;
+      padding-top: 1.8rem;
+      margin-top: 1rem;
+      font-size: 0.98rem;
+      line-height: 1.6;
+      color: #4f3c2a;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .closing-text {
+      max-width: 70%;
+    }
+
+    .closing a {
+      display: inline-block;
+      background: #d99e6f;
+      color: #2d1f13;
+      font-weight: 600;
+      padding: 0.6rem 1.8rem;
+      border-radius: 60px;
+      text-decoration: none;
+      font-size: 1rem;
+      letter-spacing: 0.02em;
+      transition: background 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 8px -4px rgba(120, 70, 30, 0.25);
+    }
+
+    .closing a:hover {
+      background: #cc8a59;
+      box-shadow: 0 6px 14px -6px rgba(118, 65, 18, 0.35);
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 2rem 1.4rem 2.2rem;
+      }
+      h1 {
+        font-size: 1.9rem;
+      }
+      .subhead {
+        font-size: 0.95rem;
+      }
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+      .faq-note {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+      .closing {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+      .closing-text {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+
+    <div class="hero-short">✦ 简明指南</div>
+    <h1>爱游戏 · 访问提醒</h1>
+    <div class="subhead">从定位到使用，一份精炼的起步参考</div>
+
+    <div class="intro-text">
+      <p>
+        如果你正在寻找一个稳定、直接的线上入口，<a href="https://i-gamemain.com.cn">爱游戏</a> 是当前推荐的统一访问点。它集合了内容索引与平台导航功能，无需额外配置即可浏览主要板块。以下从实际使用角度列出几个要点，帮助你快速建立操作框架。
+      </p>
+      <p>
+        网站结构以信息层级优先，主页直接展示核心分类与更新动态。建议初次使用时先浏览导航栏分区，了解内容组织方式；部分页面依赖现代浏览器特性，请保持浏览器为最新稳定版本。
+      </p>
+    </div>
+
+    <div class="feature-grid">
+      <div class="feature-item">
+        <span class="num">1</span>
+        <h3>直接访问</h3>
+        <p>域名 i-gamemain.com.cn 为固定入口，无需代理或跳转，确保首次连接顺利。</p>
+      </div>
+      <div class="feature-item">
+        <span class="num">2</span>
+        <h3>内容分区</h3>
+        <p>首页、分类、专题各自独立，通过顶部菜单快速切换，减少浏览层级。</p>
+      </div>
+      <div class="feature-item">
+        <span class="num">3</span>
+        <h3>信息密度</h3>
+        <p>列表页优先展示标题与摘要，点击后进入详情；减少无关装饰，提升获取效率。</p>
+      </div>
+      <div class="feature-item">
+        <span class="num">4</span>
+        <h3>反馈渠道</h3>
+        <p>页面底部保留联系入口，适用于报告异常或功能建议，响应周期约 1–2 工作日。</p>
+      </div>
+    </div>
+
+    <div class="reminder-block">
+      <span class="label">提醒</span>
+      <p>
+        使用前请确认网络环境可正常解析域名。若遇间歇性加载缓慢，可尝试刷新或清除浏览器缓存。本站未使用第三方跟踪脚本，基础隐私保护默认生效。更多策略说明请参阅页面内相关章节。
+      </p>
+    </div>
+
+    <div class="faq-note">
+      <details>
+        <summary>FAQ 摘要 · 账户与登录</summary>
+        <p>当前版本未强制注册，浏览公开内容无需账户。部分互动功能（如评论、收藏）可能需要轻量身份验证，具体以页面提示为准。</p>
+      </details>
+      <details>
+        <summary>FAQ 摘要 · 移动端适配</summary>
+        <p>布局基于流式网格，手机竖屏、平板横屏均可正常阅读。若个别卡片显示错位，可尝试旋转屏幕或更新浏览器。</p>
+      </details>
+    </div>
+
+    <div class="closing">
+      <div class="closing-text">
+        <span>以上要点覆盖了从定位到日常使用的常见场景。保持简洁，专注内容。</span>
+      </div>
+      <a href="https://i-gamemain.com.cn">爱游戏</a>
+    </div>
+
+  </div>
+</body>
+</html>

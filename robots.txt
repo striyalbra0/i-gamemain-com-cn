@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://striyalbra0.github.io/i-gamemain-com-cn/sitemap.xml
