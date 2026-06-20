@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bb体育 · 知识型介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f5f9fc;
+            color: #1a2b3e;
+            line-height: 1.6;
+            padding: 2rem 1.2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .page {
+            display: flex;
+            flex-direction: column;
+            gap: 2.8rem;
+        }
+
+        /* 开场 - 短句卡片 */
+        .opening {
+            background: linear-gradient(145deg, #e0eff7 0%, #c8e2f0 100%);
+            border-left: 6px solid #1f7a8c;
+            border-radius: 20px;
+            padding: 2rem 2rem 1.8rem 2rem;
+            box-shadow: 0 8px 20px rgba(31, 122, 140, 0.08);
+        }
+
+        .opening h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: #0b3b44;
+            margin-bottom: 0.4rem;
+        }
+
+        .opening .short {
+            font-size: 1.1rem;
+            color: #1e5f6b;
+            border-bottom: 1px dashed #8bbcc9;
+            padding-bottom: 1rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .opening .lead {
+            font-size: 1.05rem;
+            color: #1d4b56;
+        }
+
+        /* 承接段落 — 网格卡片风格 */
+        .bridge {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .bridge-card {
+            background: white;
+            border-radius: 24px;
+            padding: 1.6rem 1.5rem;
+            box-shadow: 0 6px 16px rgba(0, 30, 40, 0.04);
+            border: 1px solid #ddecf2;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .bridge-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(31, 122, 140, 0.10);
+            border-color: #a6cfdb;
+        }
+
+        .bridge-card h3 {
+            font-size: 1.2rem;
+            font-weight:500;
+            color: #1a5e6b;
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .bridge-card h3::before {
+            content: "▹";
+            color: #2b8c9e;
+            font-weight: 300;
+            font-size: 1.3rem;
+        }
+
+        .bridge-card p {
+            font-size: 0.98rem;
+            color: #274a55;
+        }
+
+        .bridge-card .highlight {
+            color: #117a8c;
+            font-weight: 500;
+        }
+
+        /* 特点列表 — 垂直卡片 */
+        .features {
+            background: #ffffffec;
+            border-radius: 28px;
+            padding: 2rem 1.8rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+            border: 1px solid #d3e5ed;
+        }
+
+        .features h2 {
+            font-size: 1.5rem;
+            font-weight: 450;
+            color: #0d4450;
+            border-bottom: 2px dotted #7bb8c9;
+            padding-bottom: 0.6rem;
+            margin-bottom: 1.6rem;
+            letter-spacing: 0.3px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.2rem;
+        }
+
+        .feature-item {
+            background: #f2f8fb;
+            padding: 1.2rem 1rem;
+            border-radius: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            border-left: 4px solid #2897ad;
+            transition: background 0.15s;
+        }
+
+        .feature-item:hover {
+            background: #e3f0f6;
+        }
+
+        .feature-item .title {
+            font-weight: 550;
+            font-size: 1rem;
+            color: #0f4d5b;
+        }
+
+        .feature-item .desc {
+            font-size: 0.9rem;
+            color: #2a5b68;
+            line-height: 1.5;
+        }
+
+        .feature-item .tag {
+            align-self: flex-start;
+            background: #b9dde8;
+            color: #05424e;
+            padding: 0.15rem 0.7rem;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            letter-spacing: 0.3px;
+        }
+
+        /* 场景 / 提示 混合区 — 温和基调 */
+        .scenario {
+            background: #e7f3f8;
+            border-radius: 32px;
+            padding: 1.8rem 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 1.8rem;
+        }
+
+        .scenario-left {
+            flex: 2 1 240px;
+        }
+
+        .scenario-left h2 {
+            font-size: 1.3rem;
+            font-weight: 450;
+            color: #124e5c;
+            margin-bottom: 0.75rem;
+        }
+
+        .scenario-left p {
+            margin-bottom: 0.8rem;
+            color: #1e4c58;
+        }
+
+        .scenario-left .insight {
+            background: #d0e6ef;
+            padding: 0.7rem 1rem;
+            border-radius: 40px;
+            display: inline-block;
+            font-size: 0.9rem;
+            color: #023b46;
+            font-weight: 460;
+            margin-top: 0.2rem;
+        }
+
+        .scenario-right {
+            background: white;
+            border-radius: 30px;
+            padding: 1.3rem 1.5rem;
+            flex: 1 1 180px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+            border: 1px solid #bed8e3;
+            align-self: center;
+        }
+
+        .scenario-right p {
+            font-size: 0.95rem;
+            color: #1a4d59;
+            margin-bottom: 0.5rem;
+        }
+
+        .scenario-right a {
+            color: #117689;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid #7bb5c6;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .scenario-right a:hover {
+            border-bottom-color: #054e5e;
+            color: #05424e;
+        }
+
+        /* FAQ 摘要 — 小块提示 */
+        .faq-digest {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .faq-card {
+            background: white;
+            border-radius: 40px;
+            padding: 0.7rem 1.4rem 0.7rem 1.6rem;
+            border: 1px solid #c3dbe6;
+            font-size: 0.9rem;
+            color: #1b4b57;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            box-shadow: 0 1px 6px rgba(0,0,0,0.02);
+        }
+
+        .faq-card span {
+            background: #2f869b;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-right: 0.2rem;
+        }
+
+        .faq-card a {
+            color: #0b5b6b;
+            text-decoration: none;
+            border-bottom: 1px dotted #6faebb;
+        }
+
+        .faq-card a:hover {
+            border-bottom-style: solid;
+            color: #04343f;
+        }
+
+        /* 温和结尾 */
+        .gentle-footer {
+            text-align: center;
+            margin-top: 0.8rem;
+            padding: 1.8rem 1rem 0.8rem;
+            border-top: 1px solid #c7dfe9;
+        }
+
+        .gentle-footer p {
+            font-size: 0.95rem;
+            color: #38626e;
+            max-width: 450px;
+            margin: 0 auto 0.6rem;
+        }
+
+        .gentle-footer .ref-link {
+            color: #1d6b7c;
+            font-weight: 460;
+            text-decoration: none;
+            border-bottom: 1px solid #7ab1c0;
+        }
+
+        .gentle-footer .ref-link:hover {
+            color: #043c47;
+            border-bottom-color: #043c47;
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 640px) {
+            body {
+                padding: 1.2rem 1rem;
+            }
+
+            .opening {
+                padding: 1.5rem 1.2rem;
+            }
+
+            .opening h1 {
+                font-size: 1.7rem;
+            }
+
+            .bridge {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .features {
+                padding: 1.5rem 1rem;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.9rem;
+            }
+
+            .scenario {
+                flex-direction: column;
+                padding: 1.5rem 1.2rem;
+            }
+
+            .scenario-right {
+                align-self: stretch;
+            }
+
+            .faq-digest {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .faq-card {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 430px) {
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* 小点缀 */
+        .dot-accent {
+            color: #2897ad;
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- 开场短句 -->
+    <div class="opening">
+        <h1>bb体育 · 从竞技叙事开始</h1>
+        <div class="short">赛事不止是比分，更是一连串值得拆解的知识片段。</div>
+        <div class="lead">
+            当你开始关注一项运动，总会先问：它为什么吸引人？规则如何塑造对抗？数据的背后藏着什么逻辑？<br>
+            这些问题的答案，往往比结果本身更持久。
+        </div>
+    </div>
+
+    <!-- 承接段落 (网格卡片) -->
+    <div class="bridge">
+        <div class="bridge-card">
+            <h3>运动场景的微观察</h3>
+            <p>每一次攻防转换都依赖空间判断、体能分配与决策效率。理解这些环节，观赛就不再只是看热闹。<span class="highlight">bb体育</span> 希望帮你建立更立体的观看框架——从战术到技术，从历史到当下。</p>
+        </div>
+        <div class="bridge-card">
+            <h3>数据与故事的交叉点</h3>
+            <p>赛后的技术统计是凝固的叙事，而比赛本身是流动的。将两者结合，才能体会“为什么这个回合改变了局势”。这也是许多爱好者持续探索的乐趣所在。</p>
+        </div>
+    </div>
+
+    <!-- 特点列表 (卡片网格) -->
+    <div class="features">
+        <h2>围绕 bb体育 的特点速览</h2>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <span class="title">规则拆解</span>
+                <span class="desc">从赛制到判罚尺度，简明梳理运动逻辑。</span>
+                <span class="tag">知识向</span>
+            </div>
+            <div class="feature-item">
+                <span class="title">赛季脉络</span>
+                <span class="desc">联赛结构、晋级路径、关键节点一览。</span>
+                <span class="tag">框架</span>
+            </div>
+            <div class="feature-item">
+                <span class="title">术语解读</span>
+                <span class="desc">位置、战术、统计指标——减少信息差。</span>
+                <span class="tag">辞典</span>
+            </div>
+            <div class="feature-item">
+                <span class="title">背景档案</span>
+                <span class="desc">队伍历史、经典对阵、文化符号。</span>
+                <span class="tag">叙事</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 场景 + 提示 混合区 -->
+    <div class="scenario">
+        <div class="scenario-left">
+            <h2>适合这样的你</h2>
+            <p>—— 刚接触某项运动，希望快速抓住核心脉络；<br>
+            —— 想为观赛增加一层分析视角，而不只是看胜负；<br>
+            —— 好奇赛事背后的组织逻辑、数据意义与演变过程。</p>
+            <div class="insight">提示：知识积累本身也是一种乐趣，不必追求速成。</div>
+        </div>
+        <div class="scenario-right">
+            <p>更多内容方向与讨论，可参考 <a href="https://m-bb-sport.com">bb体育</a> 站内专题。站点围绕运动知识组织，持续梳理不同赛事的背景与观察方式。</p>
+        </div>
+    </div>
+
+    <!-- FAQ 摘要风格卡片（简短问答感） -->
+    <div class="faq-digest">
+        <div class="faq-card"><span>?</span> 运动术语记不住怎么办？ → 按位置/动作分类记忆</div>
+        <div class="faq-card"><span>?</span> 从哪里了解赛季结构？ → 联赛官网或<a href="https://m-bb-sport.com">bb体育</a>赛季页</div>
+        <div class="faq-card"><span>?</span  >数据统计怎么看？ → 关注效率值、节奏、使用率</div>
+    </div>
+
+    <!-- 温和结尾 -->
+    <div class="gentle-footer">
+        <p>理解运动，是接近体育文化的一种方式。保持好奇，慢慢深入。<br>
+        更多内容可以访问 <a href="https://m-bb-sport.com" class="ref-link">bb体育</a>，浏览不同赛事的背景梳理与知识归纳。</p>
+        <p style="font-size:0.8rem; color:#4e7885; margin-top:0.8rem;">— 叙述式介绍页 · 蓝绿点缀 —</p>
+    </div>
+
+</div>
+</body>
+</html>
