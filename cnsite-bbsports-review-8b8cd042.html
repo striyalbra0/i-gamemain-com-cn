@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bb体育 · 站点说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #f7f3ec;
+            font-family: 'Georgia', 'Noto Serif SC', 'Times New Roman', serif;
+            color: #2c3e4f;
+            line-height: 1.7;
+            padding: 3rem 1.5rem 4rem;
+        }
+        .page {
+            max-width: 780px;
+            margin: 0 auto;
+            background: #fdfbf8;
+            padding: 3rem 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.04), 0 1px 6px rgba(0, 0, 0, 0.02);
+        }
+        h1 {
+            font-size: 2.4rem;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+            color: #1e2b37;
+            border-left: 4px solid #b8a48c;
+            padding-left: 1.2rem;
+            margin-bottom: 0.8rem;
+            line-height: 1.2;
+        }
+        .subhead {
+            font-size: 1rem;
+            color: #5c6b7a;
+            margin-bottom: 2.2rem;
+            padding-left: 1.6rem;
+            border-left: 1px solid #ddd2c3;
+        }
+        .opening {
+            font-size: 1.15rem;
+            margin-bottom: 1.8rem;
+            padding: 0.8rem 1.4rem;
+            background: #f4efe8;
+            border-radius: 10px;
+            color: #1f2a33;
+        }
+        p {
+            margin-bottom: 1.6rem;
+            text-align: justify;
+        }
+        .highlight-box {
+            background: #f1ebe3;
+            border-left: 6px solid #b8a48c;
+            padding: 1.4rem 2rem;
+            margin: 2.2rem 0 2rem;
+            border-radius: 0 12px 12px 0;
+            font-size: 0.98rem;
+        }
+        .highlight-box strong {
+            color: #1a2a38;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0 2.2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem 2rem;
+        }
+        li {
+            padding: 0.5rem 0 0.5rem 1.8rem;
+            position: relative;
+            font-size: 0.98rem;
+            color: #20303e;
+        }
+        li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: #b8a48c;
+            font-weight: 300;
+        }
+        .faq-summary {
+            margin: 2.5rem 0 2rem;
+            padding: 1.6rem 2rem;
+            background: #f5f0ea;
+            border-radius: 14px;
+        }
+        .faq-summary h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #1e2b37;
+            margin-bottom: 1rem;
+            letter-spacing: 0.3px;
+        }
+        .faq-item {
+            margin-bottom: 1rem;
+        }
+        .faq-item .q {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.2rem;
+            color: #1f2e3b;
+        }
+        .faq-item .a {
+            font-size: 0.95rem;
+            color: #3f4e5c;
+            padding-left: 0.2rem;
+        }
+        .closing {
+            margin-top: 2.8rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #e1d7cb;
+            font-size: 1rem;
+            color: #3b4b5a;
+        }
+        .closing a {
+            color: #1e2b37;
+            text-decoration: none;
+            border-bottom: 1px solid #b8a48c;
+            padding-bottom: 1px;
+            transition: border-color 0.2s;
+        }
+        .closing a:hover {
+            border-bottom-color: #1e2b37;
+        }
+        .note-tag {
+            display: inline-block;
+            background: #e6ddd2;
+            font-size: 0.75rem;
+            padding: 0.1rem 0.7rem;
+            border-radius: 20px;
+            color: #2c3e4f;
+            letter-spacing: 0.3px;
+            margin-right: 0.4rem;
+        }
+        @media (max-width: 640px) {
+            body {
+                padding: 1.8rem 1rem 3rem;
+            }
+            .page {
+                padding: 2rem 1.4rem;
+            }
+            h1 {
+                font-size: 1.9rem;
+                padding-left: 1rem;
+            }
+            .subhead {
+                padding-left: 1rem;
+                font-size: 0.9rem;
+            }
+            ul {
+                grid-template-columns: 1fr;
+                gap: 0.3rem;
+            }
+            .opening {
+                font-size: 1.05rem;
+                padding: 0.6rem 1.2rem;
+            }
+            .highlight-box {
+                padding: 1rem 1.4rem;
+            }
+            .faq-summary {
+                padding: 1.2rem 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <h1>bb体育</h1>
+    <div class="subhead">一个关于站点背景与可信度的简明介绍</div>
+
+    <div class="opening">
+        互联网上的体育信息站点数以千计，但真正能持续输出可靠内容、结构清晰且经得起查证的并不多。<br>
+        今天要说的，是 <strong><a href="https://cnsite--bbsports.com" style="color:#1e2b37; text-decoration:none; border-bottom:1px solid #b8a48c;">bb体育</a></strong> 这个站点的定位与基本面貌。
+    </div>
+
+    <p>
+        <span class="note-tag">背景</span> 
+        一个站点的价值，往往不在于它收录了多少信息，而在于它能否帮助用户快速理解自己所处的信息环境。 
+        <a href="https://cnsite--bbsports.com" style="color:#1e2b37; text-decoration:none; border-bottom:1px solid #b8a48c;">bb体育</a> 
+        并非一个追求流量的泛资讯平台，而是一个在体育内容领域保持节制的信息聚合与呈现站点。 
+        它的架构倾向于简洁，避免过度装饰，把注意力集中在内容的可读性上。
+    </p>
+
+    <div class="highlight-box">
+        <strong>⸻ 为什么值得了解</strong><br>
+        在体育站点普遍追求“快”与“全”的当下，<a href="https://cnsite--bbsports.com" style="color:#1e2b37; text-decoration:none; border-bottom:1px solid #b8a48c;">bb体育</a> 选择了另一种节奏： 
+        内容组织有层级，信息来源有标注，页面布局不堆积广告元素。 
+        对希望快速了解赛事概况、训练观点或运动背景的用户来说，它是一个低干扰的阅读环境。
+    </div>
+
+    <h2 style="font-weight:400; font-size:1.25rem; margin:1.5rem 0 0.8rem; color:#1e2b37;">几个可注意的特点</h2>
+    <ul>
+        <li>信息层级清晰，导航直接指向核心板块</li>
+        <li>文章风格偏纪实，避免情绪化标题与夸大描述</li>
+        <li>移动端适配友好，排版在窄屏下依然可读</li>
+        <li>引用外部数据或来源时，保持可追溯的链接</li>
+        <li>不强制弹窗、不诱导收藏，尊重用户浏览节奏</li>
+        <li>更新频率稳定，内容偏向深度而非碎片化</li>
+    </ul>
+
+    <p>
+        一个值得注意的细节是：站点的页面结构始终保持一致，没有突然的布局变动或隐藏入口。 
+        对于初次接触的用户，<a href="https://cnsite--bbsports.com" style="color:#1e2b37; text-decoration:none; border-bottom:1px solid #b8a48c;">bb体育</a> 
+        并不需要你“注册”或“关注”什么，它更像一个开放的书架——你随时可以翻开感兴趣的部分，然后合上离开。 
+        这种克制在今天的体育类网站中显得格外少见。
+    </p>
+
+    <div class="faq-summary">
+        <h3>▎常见疑问摘要</h3>
+        <div class="faq-item">
+            <span class="q">问：这个站点主要覆盖哪些体育项目？</span>
+            <span class="a">答：以足球、篮球、网球及综合赛事为主，偶尔涉及运动科学与训练方法。</span>
+        </div>
+        <div class="faq-item">
+            <span class="q">问：内容来源是否可靠？</span>
+            <span class="a">答：站点在文章中会注明出处或参考链接，不捏造数据，不匿名编撰。</span>
+        </div>
+        <div class="faq-item">
+            <span class="q">问：站点的更新节奏是怎样的？</span>
+            <span class="a">答：平均每周更新 3-5 篇原创或编译内容，重大赛事期间会适当增加。</span>
+        </div>
+    </div>
+
+    <p>
+        当然，没有任何一个站点可以做到绝对全面。但至少从目前的结构与内容质量来看，
+        <a href="https://cnsite--bbsports.com" style="color:#1e2b37; text-decoration:none; border-bottom:1px solid #b8a48c;">bb体育</a> 
+        在“让人愿意读下去”这件事上是花了心思的。 
+        如果你对体育信息的要求不仅仅是标题和比分，而希望看到更有条理、更有背景的叙述，这个站点或许能契合你的阅读习惯。
+    </p>
+
+    <div class="closing">
+        <span style="font-style:italic;">本文是对站点的客观描述，不构成任何形式的使用建议或背书。</span><br>
+        了解更多，可自行浏览 
+        <a href="https://cnsite--bbsports.com">bb体育</a>。
+    </div>
+</div>
+</body>
+</html>
